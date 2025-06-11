@@ -18,16 +18,17 @@
                     <div class="listEle">
                         <input class="check inside" type="checkbox" value = "<%= i %>">
                         <p class="task inside"><%= arr[i] %></p>
-                        <% if (req.query.error === 'empty') { %>
-                            <script>
-                                alert("Task cannot be empty.");
-                            </script>
-                        <% } %>
                         <button class="delete inside" name="delete" value = "<%= i %>">x</button>
                     </div>
                 </form>
             </div>
         <% } %>
+    <% } %>
+    <body>
+    <% if (typeof req !== 'undefined' && req.query.error === 'empty') { %>
+        <script>
+            alert("Task cannot be empty.");
+        </script>
     <% } %>
 
     <form action="/" method="POST" class="done">

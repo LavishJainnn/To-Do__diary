@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: true}));
 
 app.get("/", function(req,res){
-    res.render("view", {arr: items});
+    res.render("view", {arr: items, req: req});
 });
 
 app.post("/", function(req,res){
@@ -20,7 +20,7 @@ app.post("/", function(req,res){
         items.push(item);
     }
     else {
-        res.redirect("/?error=empty");
+        return res.redirect("/?error=empty");
     }
     res.redirect("/");
 });
