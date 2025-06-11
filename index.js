@@ -20,7 +20,7 @@ app.post("/", function(req,res){
         items.push(item);
     }
     else{
-        alert("Task cannot be empty.")
+        console.log("Task cannot be empty.");
     }
     res.redirect("/");
 });
