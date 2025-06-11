@@ -19,8 +19,8 @@ app.post("/", function(req,res){
     if(item !== ""){
         items.push(item);
     }
-    else{
-        console.log("Task cannot be empty.");
+    else {
+        res.redirect("/?error=empty");
     }
     res.redirect("/");
 });
